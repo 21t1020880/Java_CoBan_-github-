@@ -37,6 +37,13 @@ public class MENU {
 				break;
 			case 4:
 				System.out.print("\n[4]. Tim so USCLN va BSCNN cua hai so a va b.\n\n");
+				System.out.print("Nhap a: ");
+				int x = sc.nextInt();
+				System.out.print("Nhap b: ");
+				int y = sc.nextInt();
+				System.out.print("USCLN cua " + x + " va " + y + " la: " + USCLN(x, y) + "\n");
+				System.out.print("BSCNN cua "+ x + " va " + y + " la: " + BSCNN(x, y));
+				System.out.print("\n\n");
 				break;
 			case 5:
 				System.out.print("\n[5]. Liet ke so nguyen to nho hon n.\n\n");
@@ -147,7 +154,14 @@ public class MENU {
 	    }
 		return true;
 	}
-	
+	//Cau 4
+		public static int USCLN(int a, int b) {
+			if (b == 0) return a;
+			return USCLN(b, a % b);
+		}
+		public static int BSCNN(int a, int b) {
+			return (a * b) / USCLN(a, b);
+		}
 	//Cau 3:
 	private static int fibonacci(int n) {
 		if(n == 1 || n == 2)
